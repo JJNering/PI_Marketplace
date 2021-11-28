@@ -238,12 +238,9 @@ return [
 
         // Sidebar items:
         [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
-        [
             'text' => 'Planos',
             'url'  => 'admin/plans',
+            'icon' => 'fas fa-list-alt'
         ],
         [
             'text'        => 'pages',
