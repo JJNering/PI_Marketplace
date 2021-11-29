@@ -18,6 +18,12 @@ Route::prefix('admin')
         ->group(function () {
 
     /**
+     * Route Profiles
+     */
+    Route::any('profiles/search', 'ACL\ProfileController@search')->name('profiles.search');
+    Route::resource('profiles', 'ACL\ProfileController');
+
+    /**
      * Route Details Plans
      */
     Route::get('plans/{url}/details/create', 'DetailPlanController@create')->name('details.plan.create');
