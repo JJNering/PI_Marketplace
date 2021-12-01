@@ -62,11 +62,11 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        if (!$profile = $this->repository->find($id)) {
+        if (!$user = $this->repository->find($id)) {
             return redirect()->back();
         };
 
-        return view('admin.pages.users.show', compact('profile'));
+        return view('admin.pages.users.show', compact('user'));
     }
 
     /**
@@ -77,11 +77,11 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        if (!$profile = $this->repository->find($id)) {
+        if (!$user = $this->repository->find($id)) {
             return redirect()->back();
         };
 
-        return view('admin.pages.users.edit', compact('profile'));
+        return view('admin.pages.users.edit', compact('user'));
     }
 
     /**
@@ -93,11 +93,11 @@ class UserController extends Controller
      */
     public function update(StoreUpdateUser $request, $id)
     {
-        if (!$profile = $this->repository->find($id)) {
+        if (!$user = $this->repository->find($id)) {
             return redirect()->back();
         };
 
-        $profile->update($request->all());
+        $user->update($request->all());
 
         return redirect()->route('users.index');
     }
@@ -110,11 +110,11 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        if (!$profile = $this->repository->find($id)) {
+        if (!$user = $this->repository->find($id)) {
             return redirect()->back();
         };
 
-        $profile->delete();
+        $user->delete();
 
         return redirect()->route('users.index');
     }
