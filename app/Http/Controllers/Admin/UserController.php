@@ -139,14 +139,14 @@ class UserController extends Controller
         $users = $this->repository
             ->where(function ($query) use ($request) {
                 if ($request->filter) {
-                    $query->where('name', $request->filter);
-                    $query->orWhere('email', 'LIKE', "%{$request->filter}%");
+                    $query->orWhere('name', 'LIKE', "%{$request->filter}%");
+                    $query->orWhere('email', $request->filter);
                 }
             })
             ->latest()
             ->tenantUser()
             ->paginate();
 
-        return redirect()->route('users.index', compact('users', 'filters'));
+        return view('admin.pages.users.index', compact('users', 'filters'));
     }
 }
