@@ -20,6 +20,12 @@ Route::prefix('admin')
         ->group(function () {
 
     /**
+     * Route Tables
+     */
+    Route::any('tables/search', 'TableController@search')->name('tables.search');
+    Route::resource('tables', 'TableController');
+
+    /**
      * Route Product x Category
      */
     Route::get('products/{id}/category/{idCategory}/detach', 'CategoryProductController@detachCategoryProduct')->name('products.category.detach');
