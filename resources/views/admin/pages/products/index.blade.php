@@ -7,7 +7,7 @@
         <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Dashboard</a></li>
         <li class="breadcrumb-item active"><a href="{{ route('products.index') }}" class="active">Produtos</a></li>
     </ol>
-    <h1>Produtos <a href="{{ route('products.create') }}" class="btn btn-dark">ADD</a></h1>
+    <h1>Produtos <a href="{{ route('products.create') }}" class="btn btn-dark"><i class="fas fa-plus"></i></a></h1>
 @stop
 
 @section('content')
@@ -16,7 +16,7 @@
             <form action="{{ route('products.search') }}" method="POST" class="form form-inline">
                 @csrf
                 <input type="text" name="filter" placeholder="Filtrar:" class="form-control" value="{{ $filters['filter'] ?? '' }}">
-                <button type="submit" class="btn btn-dark">Filtrar</button>
+                <button type="submit" class="btn btn-dark"><i class="fas fa-search"></i></button>
             </form>
         </div>
         <div class="card-body">
@@ -40,9 +40,9 @@
                             <td>R$ {{ number_format($product->price, 2, ',', '.') }}</td>
                             <td>{{ $product->description }}</td>
                             <td style="width=10px;">
-                                <a href="{{ route('products.categories', $product->id) }}" class="btn btn-warning" title="Categorias"><i class="fas fa-layer-group"></i></a>
-                                <a href="{{ route('products.edit', $product->id) }}" class="btn btn-info">Editar</a>
-                                <a href="{{ route('products.show', $product->id) }}" class="btn btn-warning">Ver</a>
+                                <a href="{{ route('products.categories', $product->id) }}" class="btn btn-primary" title="Categorias"><i class="fas fa-layer-group"></i></a>
+                                <a href="{{ route('products.edit', $product->id) }}" class="btn btn-info"><i class="fas fa-edit"></i></a>
+                                <a href="{{ route('products.show', $product->id) }}" class="btn btn-success"><i class="fas fa-eye"></i></a>
                             </td>
                         </tr>
                     @endforeach

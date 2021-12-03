@@ -15,8 +15,8 @@
         <div class="card-header">
             <form action="{{ route('categories.search') }}" method="POST" class="form form-inline">
                 @csrf
-                <input type="text" name="filter" placeholder="Filtrar:" class="form-control" value="{{ $filters['filter'] ?? '' }}">
-                <button type="submit" class="btn btn-dark">Filtrar</button>
+                <input type="text" name="filter" placeholder="Filtrar" class="form-control" value="{{ $filters['filter'] ?? '' }}">
+                <button type="submit" class="btn btn-dark"><i class="fas fa-search"></i></button>
             </form>
         </div>
         <div class="card-body">
@@ -34,8 +34,8 @@
                             <td>{{ $category->name }}</td>
                             <td>{{ $category->description }}</td>
                             <td style="width=10px;">
-                                <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-info">Editar</a>
-                                <a href="{{ route('categories.show', $category->id) }}" class="btn btn-warning">Ver</a>
+                                <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-info"><i class="fas fa-edit"></i></a>
+                                <a href="{{ route('categories.show', $category->id) }}" class="btn btn-success"><i class="fas fa-eye"></i></a>
                             </td>
                         </tr>
                     @endforeach

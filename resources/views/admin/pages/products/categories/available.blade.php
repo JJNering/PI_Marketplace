@@ -17,9 +17,9 @@
         <div class="card-header">
             <form action="{{ route('products.categories.available', $product->id) }}" method="POST" class="form form-inline">
                 @csrf
-                <input type="text" name="filter" placeholder="Pesquisar" class="form-control"
+                <input type="text" name="filter" placeholder="Filtrar" class="form-control"
                     value="{{ $filters['filter'] ?? '' }}">
-                <button type="submit" class="btn btn-dark">Filtrar</button>
+                <button type="submit" class="btn btn-dark"><i class="fas fa-search"></i></button>
             </form>
         </div>
         <div class="card-body">

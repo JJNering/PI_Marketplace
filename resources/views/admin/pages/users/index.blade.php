@@ -11,7 +11,7 @@
             <a href="{{ route('users.index') }}" class="active">Usuários</a>
         </li>
     </ol>
-    <h1>Usuários <a href="{{ route('users.create') }}" class="btn btn-dark">ADD</a></h1>
+    <h1>Usuários <a href="{{ route('users.create') }}" class="btn btn-dark"><i class="fas fa-plus"></i></a></h1>
 @stop
 
 @section('content')
@@ -19,8 +19,8 @@
         <div class="card-header">
             <form action="{{ route('users.search') }}" method="POST" class="form form-inline">
                 @csrf
-                <input type="text" name="filter" placeholder="Filtrar:" class="form-control" value="{{ $filters['filter'] ?? '' }}">
-                <button type="submit" class="btn btn-dark">Filtrar</button>
+                <input type="text" name="filter" placeholder="Filtrar" class="form-control" value="{{ $filters['filter'] ?? '' }}">
+                <button type="submit" class="btn btn-dark"><i class="fas fa-search"></i></button>
             </form>
         </div>
         <div class="card-body">
@@ -38,8 +38,8 @@
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
                             <td style="width=10px;">
-                                <a href="{{ route('users.edit', $user->id) }}" class="btn btn-info">Editar</a>
-                                <a href="{{ route('users.show', $user->id) }}" class="btn btn-warning">Ver</a>
+                                <a href="{{ route('users.edit', $user->id) }}" class="btn btn-info"><i class="fas fa-edit"></i></a>
+                                <a href="{{ route('users.show', $user->id) }}" class="btn btn-success"><i class="fas fa-eye"></i></a>
                             </td>
                         </tr>
                     @endforeach
