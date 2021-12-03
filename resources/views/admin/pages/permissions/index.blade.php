@@ -7,7 +7,7 @@
         <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Dashboard</a></li>
         <li class="breadcrumb-item active"><a href="{{ route('permissions.index') }}" class="active">Permissões</a></li>
     </ol>
-    <h1>Permissões <a href="{{ route('permissions.create') }}" class="btn btn-dark">ADD</a></h1>
+    <h1>Permissões <a href="{{ route('permissions.create') }}" class="btn btn-dark"><i class="fas fa-plus"></i></a></h1>
 @stop
 
 @section('content')
@@ -34,9 +34,9 @@
                                 {{ $permission->name }}
                             </td>
                             <td style="width=10px;">
-                                <a href="{{ route('permissions.edit', $permission->id) }}" class="btn btn-info">Editar</a>
-                                <a href="{{ route('permissions.show', $permission->id) }}" class="btn btn-warning">Ver</a>
-                                <a href="{{ route('permissions.profiles', $permission->id) }}" class="btn btn-info"><i class="fas fa-address-book"></i></a>
+                                <a title="Editar" href="{{ route('permissions.edit', $permission->id) }}" class="btn btn-info"><i class="fas fa-edit"></i></a>
+                                <a title="Visualizar" href="{{ route('permissions.show', $permission->id) }}" class="btn btn-success"><i class="fas fa-eye"></i></a>
+                                <a title="Perfil" href="{{ route('permissions.profiles', $permission->id) }}" class="btn btn-primary"><i class="fas fa-address-book"></i></a>
                             </td>
                         </tr>
                     @endforeach

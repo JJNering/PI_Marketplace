@@ -29,7 +29,7 @@
                     <tr>
                         <th>Nome</th>
                         <th>E-mail</th>
-                        <th width="300">Ações</th>
+                        <th width="120">Ações</th>
                     </tr>
                 </thead>
                 <tbody>

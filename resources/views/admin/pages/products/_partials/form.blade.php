@@ -2,7 +2,7 @@
 
 <div class="form-group">
     <label>* Título:</label>
-    <input type="text" name="title" class="form-control" placeholder="Título:" value="{{ $product->title ?? old('title') }}">
+    <input type="text" name="title" class="form-control" placeholder="Título:" value="{{ $product->title ?? old('title') }}" autofocus>
 </div>
 <div class="form-group">
     <label>* Preço:</label>

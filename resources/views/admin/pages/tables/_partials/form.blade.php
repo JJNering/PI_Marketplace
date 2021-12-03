@@ -2,7 +2,7 @@
 
 <div class="form-group">
     <label>Identificador da mesa:</label>
-    <input type="text" name="identify" class="form-control" placeholder="Identificador da mesa:" value="{{ $table->identify ?? old('identify') }}">
+    <input type="text" name="identify" class="form-control" placeholder="Identificador da mesa:" value="{{ $table->identify ?? old('identify') }}" autofocus>
 </div>
 <div class="form-group">
     <label>Descrição:</label>
