@@ -20,6 +20,18 @@ Route::prefix('admin')
         ->group(function () {
 
     /**
+     * Route Roles
+     */
+    Route::any('roles/search', 'ACL\RoleController@search')->name('roles.search');
+    Route::resource('roles', 'ACL\RoleController');
+
+    /**
+     * Route Tenants
+     */
+    Route::any('tenants/search', 'TenantController@search')->name('tenants.search');
+    Route::resource('tenants', 'TenantController');
+
+    /**
      * Route Tables
      */
     Route::any('tables/search', 'TableController@search')->name('tables.search');
@@ -109,7 +121,7 @@ Route::prefix('admin')
     /**
      * Home Dashboard
      */
-    Route::delete('/', 'PlanController@index')->name('admin.index');
+    Route::get('/', 'PlanController@index')->name('admin.index');
 });
 
 /**
