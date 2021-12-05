@@ -24,7 +24,7 @@
                 <thead>
                     <tr>
                         <th>Nome</th>
-                        <th width="250">Ações</th>
+                        <th width="200">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,7 +36,7 @@
                             <td style="width=10px;">
                                 <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-info"><i class="fas fa-edit"></i></a>
                                 <a href="{{ route('roles.show', $role->id) }}" class="btn btn-success"><i class="fas fa-eye"></i></a>
-                                {{-- <a href="{{ route('roles.permissions', $role->id) }}" class="btn btn-danger"><i class="fas fa-lock"></i></a> --}}
+                                <a href="{{ route('roles.permissions', $role->id) }}" class="btn btn-danger"><i class="fas fa-lock"></i></a>
                             </td>
                         </tr>
                     @endforeach
