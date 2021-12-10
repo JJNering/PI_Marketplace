@@ -15,3 +15,7 @@ O sistema de ACL funciona da seguinte maneira:
 * E cada Perfil possui as Permissões que dará ao usuário acesso aos vários módulos do sistema.
     
 Além disso, o usuário admin de uma empresa cliente pode criar cargos com acessos específicos dentro do permitido pelo plano e cadastrar funcionários e fazer a vinculação a esses cargos.
+
+## Screenshots
+
+Dentro da pasta screenshots localizada à raiz do sistema encontra-se prints das telas principais do sistema em funcionamento. 
