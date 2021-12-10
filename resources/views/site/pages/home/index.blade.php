@@ -1,35 +1,31 @@
-@extends('site.layouts.app')
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <title>Home - {{ config('app.name') }}</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicon/favicon-32x32.png') }}" />
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('images/favicon/favicon-96x96.png') }}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon/favicon-16x16.png') }}" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="{{ asset('images/favicon.ico') }}">
+    <link href="{{ asset('css/site.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        @include('site.pages.home._partials.header')
+        <main class="main main--footerFixed bg-gray-100">
+            @include('site.pages.home._partials.features-header')
 
-@section('content')
-<div class="text-center">
-    <h1 class="title-plan">Escolha o plano</h1>
-</div>
-<div class="row">
-    @foreach ($plans as $plan)
-        <div class="col-md-4 col-sm-6">
-            <div class="pricingTable">
-                <div class="pricing-content">
-                    <div class="pricingTable-header">
-                        <h3 class="title">{{ $plan->name }}</h3>
-                    </div>
-                    <div class="inner-content">
-                        <div class="price-value">
-                            <span class="currency">R$</span>
-                            <span class="amount">{{ number_format($plan->price, 2, ',', '.') }}</span>
-                            <span class="duration">Por Mês</span>
-                        </div>
-                        <ul>
-                            @foreach ($plan->details as $detail)
-                                <li>{{ $detail->name }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-                <div class="pricingTable-signup">
-                    <a href="{{ route('plan.subscription', $plan->url) }}">Assinar</a>
-                </div>
-            </div>
-        </div><!--end-->
-    @endforeach
-</div>
-@endsection
+            @include('site.pages.home._partials.what-is')
+
+            @include('site.pages.home._partials.features')
+
+            @include('site.pages.home._partials.plans')
+
+            @include('site.pages.home._partials.contact')
+        </main>
+        @include('site.pages.home._partials.footer')
+    </div>
+</body>
+
+</html>

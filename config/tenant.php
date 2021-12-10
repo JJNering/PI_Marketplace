@@ -6,6 +6,6 @@ return [
      * Admins e-mails
      */
     'admins' => [
-        'junior_nering@hotmail.com',
+        'admin@system.com',
     ],
 ];
