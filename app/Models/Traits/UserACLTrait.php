@@ -17,6 +17,8 @@ trait UserACLTrait
                 array_push($permissions, $permission);
         }
 
+
+
         return $permissions;
     }
 
